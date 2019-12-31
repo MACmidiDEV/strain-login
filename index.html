@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
 
     <title>
-        {% block page_title %}
-        {% endblock %}
+        GIT demo
     </title>
 
     <style>
@@ -37,38 +36,23 @@
             <ul>
                 <a class="brand-logo">
                     <i class="material-icons">eco</i>
-                        {% block page_heading %}
-                        {% endblock %}                    
+                        GIT demo               
                 </a>
             </ul>
         </div>
     </nav>
 
 <nav>
-    <ul style="">
-
-        {% if user.is_authenticated %}
+    <ul>
         <li><a href="{% url 'profile' %} ">Profile</a></li>
         <li><a href="{% url 'logout' %}">Logout</a></li>
         <li><a href="{% url 'myadmin' %}">admin</a></li>
-        {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'registration' %}">Register</a></li>
-        {% endif %}
     </ul>
     
 </nav>
-    {% if messages %}
-    <div>
-        {% for message in messages %}
-        {{message}}
-        {% endfor %}
-    </div>
-    {% endif %}
-
     <div class="container">
-        {% block content %}
-        {% endblock %}
     </div>
 
 
